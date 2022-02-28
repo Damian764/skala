@@ -1,0 +1,279 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+body.wcag .skip{
+    background-color: #000;
+    border: 2px solid #ff0;
+}
+.skip {
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    text-align: left;
+    font-size: 20px;
+}
+
+.skip:focus {
+    top: 5px;
+    left: 5px;
+    width: 150px;
+    height: 50px;
+    clip: unset;
+    z-index: 9999;
+}
+
+.header .row_2 .wrapper .block_2 .container .nav .menu li {
+    padding: 2px;
+}
+
+.slide_img {
+    min-height: 400px;
+    /* display: block !important; */
+}
+.thumb {
+    background-image: none !important;
+    padding: unset !important;
+    height: 278px;
+}
+.thumb > img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+#contrast {
+    /* display: none; */
+    border: none;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+#contrast img {
+    width: 30px;
+}
+
+body.wcag,
+body.wcag .header .row_1,
+body.wcag .header .row_2,
+body.wcag .header .row_2 .wrapper .block_2 .container .nav .menu li a,
+body.wcag .header .row_3,
+body.wcag .home_1 .slider_wrapper .slider .slide .inner .btn,
+body.wcag .home_2 .wrapper .links,
+body.wcag .home_2 .wrapper .cta.cta_1,
+body.wcag .home_2 .wrapper .cta.cta_2,
+body.wcag .home_2 .wrapper .cta.cta_3,
+body.wcag .home_3 .module .links li a,
+body.wcag .posts .post .contents .date,
+body.wcag .footer,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-item a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-parent a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-ancestor a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li a,
+body.wcag .banner .nav .menu li.current-menu-item a,
+body.wcag .banner .nav .menu li.current-menu-parent a,
+body.wcag .banner .nav .menu li.current-menu-ancestor a,
+body.wcag .banner .nav .menu li.current-page-ancestor a,
+body.wcag .banner .nav .menu li a,
+body.wcag .subpage .date,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form input[type=text],
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form textarea,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .info,
+body.wcag .subpage .wrapper .inner .cpt_contents .cpt_posts .post .btn,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li.current-menu-item a,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li a,
+body.wcag .header .row_2 .wrapper .block_2 .search_btn:hover,
+body.wcag .header .row_2 .wrapper .block_2 .container .search input,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form .btn button {
+    background: #000 !important;
+}
+
+body.wcag *,
+body.wcag .subpage .date,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form::placeholder,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form input[type=text]::placeholder,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form textarea::placeholder,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li:hover a:hover,
+body.wcag .header .row_2 .wrapper .block_2 .container .search input::placeholder {
+    color: #ff0 !important;
+}
+
+body.wcag .header .row_2 .wrapper .block_2 .container .nav .menu li a,
+body.wcag .home_1 .slider_wrapper .slider .slide .inner .btn,
+body.wcag .home_2 .wrapper .links,
+body.wcag .home_2 .wrapper .links ul li a,
+body.wcag .home_2 .wrapper .cta.cta_1,
+body.wcag .home_2 .wrapper .cta.cta_2,
+body.wcag .home_2 .wrapper .cta.cta_3,
+body.wcag .home_3 .module .links li a,
+body.wcag .posts .post .contents .date,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-item a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-parent a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-ancestor a,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li a,
+body.wcag .subpage .date,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form input[type=text],
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form textarea,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .info,
+body.wcag .subpage .wrapper .inner .cpt_contents .cpt_posts .post .btn,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li.current-menu-item a,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li a,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu,
+body.wcag .header .row_2 .wrapper .block_2 .container .search input,
+body.wcag .posts .post {
+    border: 2px solid #ff0;
+}
+
+body.wcag .home_1 .slider_wrapper .slider .slide .inner .txt p:first-child,
+body.wcag .home_2 .wrapper .links ul li a:hover span,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-item a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-parent a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-ancestor a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li:hover a:hover,
+body.wcag .banner h2,
+body.wcag .banner .breadcrumbs p a,
+body.wcag .banner .breadcrumbs p span,
+body.wcag .pagination .page-numbers.current {
+    color: #000 !important;
+}
+
+body.wcag .home_1 .slider_wrapper .arrows .arrow,
+body.wcag .home_2 .wrapper .links ul li a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-item a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-parent a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li.current-menu-ancestor a:hover,
+body.wcag .subpage .wrapper .inner .cols .sidebar .menu li a:hover,
+body.wcag .banner,
+body.wcag #contrast,
+body.wcag .pagination .page-numbers.current,
+body.wcag .header .row_2 .wrapper .block_2 .container .search button,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li a span,
+body.wcag .subpage .editor ul li::before {
+    background: #ff0 !important;
+}
+
+body.wcag .banner {
+    border-top: 2px solid #ff0;
+    border-bottom: 2px solid #ff0;
+}
+
+body.wcag .footer .col.col_2 .icons span,
+body.wcag .footer .col.col_3 .icons span,
+body.wcag .footer .col.col_4 .icons span,
+body.wcag .header .row_3 .wrapper .posts li,
+body.wcag .header .row_1,
+body.wcag .home_3 .module,
+body.wcag .subpage .wrapper .inner .cols .sidebar,
+body.wcag .subpage .wrapper .inner,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .col_1 .contact .item .block_2,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module,
+body.wcag .gallery img,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .intro,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item .name,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item .more,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item .txt_1,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item .txt_2,
+body.wcag .pagination .page-numbers.next {
+    border-color: #ff0 !important;
+}
+
+body.wcag .header .row_3 .wrapper .posts li,
+body.wcag .header .row_1,
+body.wcag .home_3 .module,
+body.wcag .subpage .wrapper .inner .cols .sidebar,
+body.wcag .subpage .wrapper .inner,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .col_1 .contact .item .block_2,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .intro,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item .name,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .team .item .more,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item .txt_1,
+body.wcag .subpage .wrapper .inner .registration_contents .phones_module .section .phones .item .txt_2,
+body.wcag .pagination .page-numbers.next {
+    border-width: 2px;
+}
+
+body.wcag .banner .nav .menu li.current-menu-item span,
+body.wcag .banner .nav .menu li.current-menu-parent span,
+body.wcag .banner .nav .menu li.current-menu-ancestor span,
+body.wcag .banner .nav .menu li.current-page-ancestor span,
+body.wcag .banner .nav .menu li span {
+    border-color: #000 transparent transparent transparent;
+}
+
+body.wcag .posts .post .contents .link svg,
+body.wcag .footer .col.col_2 .icons svg,
+body.wcag .footer .col.col_3 .icons svg,
+body.wcag .footer .col.col_4 .icons svg,
+body.wcag .footer .col.col_2 .icons svg path,
+body.wcag .footer .col.col_3 .icons svg path,
+body.wcag a.next.page-numbers path,
+body.wcag .contact .item path,
+body.wcag .news_module header a path,
+body.wcag .subpage .wrapper .inner .cpt_contents .cpt_posts .post .btn path,
+body.wcag .search_btn svg path,
+body.wcag .header .row_1 .block_1 .contact a svg,
+body.wcag .home_2 .wrapper .links ul li a svg,
+body.wcag .home_2 .wrapper .cta .arrow svg,
+body.wcag .posts .post .contents .date svg path,
+body.wcag .home_2 .wrapper .cta .icon svg path,
+body.wcag .home_1 .slider_wrapper .slider .slide .inner .btn svg,
+body.wcag .header .row_3 .wrapper svg path,
+body.wcag .subpage .wrapper .inner .cols .contents.contact_contents .module_1 .cf form .btn button svg,
+body.wcag .subpage .wrapper .inner .cols .contents.clinic_contents .info svg path {
+    fill: #ff0 !important;
+}
+
+body.wcag .breadcrumbs .icon svg path,
+body.wcag .home_2 .wrapper .links ul li a:hover svg,
+body.wcag .subpage .wrapper .inner .registration_contents .nav .menu li a span svg {
+    fill: #000 !important;
+}
+
+.home_2 .wrapper .cta .txt h3 {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.home_2 .wrapper .cta .txt p:first-of-type {
+    font-size: initial;
+    line-height: 19px;
+    font-weight: 400;
+}
+
+.banner h1 {
+    font-size: 45px;
+    line-height: 49px;
+    font-weight: 600;
+    margin: 0 0 15px;
+}
+
+@media screen and (min-width: 1024px) {
+    body.wcag .footer .col {
+        border-right: 2px solid #ff0;
+    }
+}
+.subpage .editor li {
+    margin: 20px 0;
+}
+
+.subpage .editor li li {
+    margin: 5px 0;
+}
