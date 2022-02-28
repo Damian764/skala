@@ -5,8 +5,11 @@
     <h2 class="sr-only">Główny slajder</h2>
         <div class="wrapper">
             <div class="slider_wrapper">
+                <div class="buttons">
+                    <button class="pause"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/pause-solid_biala.svg" alt="Zatrzymaj automatyczne przewijanie slajdera" loading="lazy"></button>
+                    <button class="play"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/play-solid_biala.svg" alt="Uruchom automatyczne przewijanie slajdera" loading="lazy"></button>
+                </div>
                 <div class="slider">
-                    
                     <?php if(have_rows('1_slider')) {
                         while (have_rows('1_slider')) { 
                             the_row(); 
@@ -20,10 +23,13 @@
                                 </div>
                                 <div class="inner">
                                     <div class="txt"><?php the_sub_field("txt"); ?></div>
-                                    <?php $l = get_sub_field("link"); ?>
+                                    <?php $l = get_sub_field("link"); 
+                                        $more = get_sub_field("dowiedz_sie_wiecej");
+                                    ?>
                                     <?php if($l) { ?>
                                         <a href="<?php echo $l["url"]; ?>" class="btn">
                                             <span><?php echo $l["title"]; ?></span>
+                                            <span class="sr-only">o <?php echo $more; ?></span>
                                             <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $i); ?>
                                             <?php echo file_get_contents($i[0]); ?>
                                         </a>
@@ -37,10 +43,12 @@
                     <a href="#" class="arrow prev">
                         <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_prev.svg", $i); ?>
                         <?php echo file_get_contents($i[0]); ?>
+                        <span class="sr-only">Poprzedni slajd</span>
                     </a>                
                     <a href="#" class="arrow next">
                         <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $i); ?>
                         <?php echo file_get_contents($i[0]); ?>
+                        <span class="sr-only">Następny slajd</span>
                     </a>
                 </div>
             </div>
@@ -68,43 +76,48 @@
             </div>
             <?php $g = get_field("2_cta_1"); 
             $l = $g["link"]; ?>
-            <a href="<?php echo $l["url"]; ?>" class="cta cta_1">
+            <div onClick="location.href='<?php echo $l["url"]; ?>'" class="cta cta_1">
                 <div class="icon">
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', $g["icon"], $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
                 </div>
+                
                 <div class="txt"><?php echo $g["txt"]; ?></div>
-                <div class="arrow">
+                <a href="<?php echo $l["url"]; ?>" class="arrow block_link">
+                    Dowiedz się więcej <span class="sr-only">o </span>
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
-                </div>
-            </a>        
+                </a> 
+                
+            </div>        
             <?php $g = get_field("2_cta_2"); 
             $l = $g["link"]; ?>
-            <a href="<?php echo $l["url"]; ?>" class="cta cta_2">
+            <div onClick="location.href='<?php echo $l["url"]; ?>'" class="cta cta_2">
                 <div class="icon">
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', $g["icon"], $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
                 </div>
                 <div class="txt"><?php echo $g["txt"]; ?></div>
-                <div class="arrow">
+                <a href="<?php echo $l["url"]; ?>" class="arrow block_link">
+                    Dowiedz się więcej <span class="sr-only">o </span>
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
-                </div>
-            </a>        
+                </a>
+            </div>        
             <?php $g = get_field("2_cta_3"); 
             $l = $g["link"]; ?>
-            <a href="<?php echo $l["url"]; ?>" class="cta cta_3">
+            <div onClick="location.href='<?php echo $l["url"]; ?>'" class="cta cta_3">
                 <div class="icon">
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', $g["icon"], $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
                 </div>
                 <div class="txt"><?php echo $g["txt"]; ?></div>
-                <div class="arrow">
+                <a href="<?php echo $l["url"]; ?>" class="arrow block_link">
+                    Dowiedz się więcej <span class="sr-only">o </span>
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </section>
 

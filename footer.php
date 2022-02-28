@@ -4,16 +4,17 @@
         <div class="col col_1">
             <a href="<?php echo get_home_url(); ?>" class="logo">
                 <?php $logo = wp_get_attachment_image_src(get_field('footer_logo', 'option'), 'medium')[0]; ?>
-                <img src="<?php echo $logo; ?>" alt="logo" loading="lazy">
+                <img src="<?php echo $logo; ?>" alt="Samodzielny Publiczny Zakład Opieki Zdrowotnej w Skale - Strona główna" loading="lazy">
             </a>
             <div class="copyright"><?php the_field("footer_copyright", "option"); ?></div>
             <div class="links">
                 <a href="<?php the_field("footer_bip", "option"); ?>" target="_blank" class="bip">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/bip.png" alt="BIP" loading="lazy">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/bip.png" alt="Biuletyn Informacji Publicznej" loading="lazy">
                 </a>
                 <a href="<?php the_field("header_fb", "option"); ?>" target="_blank" class="fb">
                     <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/icon_3.svg", $i); ?>
                     <?php echo file_get_contents($i[0]); ?>
+                    <span class="sr-only">Nasz profil na Facebooku</span>
                 </a>
             </div>
         </div>

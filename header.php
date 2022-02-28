@@ -6,16 +6,23 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title><?php wp_title(); ?></title>
+    <title><?php echo get_bloginfo('name'); ?> <?php wp_title('|'); ?></title>
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <ul>
-        <li><a id="to-content" class="sr-only skip" href="#main">Przejdź do treści</a></li>
-        <li><button id="to-search" class="sr-only skip" onclick="jQuery('.search_btn').focus()">Przejdź do wyszukiwarki</button></li>
-    </ul>
     <div class="page-container">
+        <ul id="skip-link" class="working">
+            <li>
+                <a href="#main-menu" class="element-invisible element-focusable">Przejdź do Menu Głównego</a>
+            </li>
+            <li>
+                <a href="#main" class="element-invisible element-focusable">Przejdź do treści</a>
+            </li>
+            <li>
+                <a href="#search_btn" class="element-invisible element-focusable">Przejdź do wyszukiwarki</a>
+            </li>
+        </ul>
 
         <header class="header">
             <div class="row_1">
@@ -36,23 +43,47 @@
                         </div>
                     </div>
                     <div class="block_2">
-                        <?php wp_nav_menu(array(
-                            'theme_location' => 'nav_1',
-                            'container' => false,
-                            'menu_class' => 'menu'
-                        )); ?>
-                        <a href="<?php the_field("header_bip", "option"); ?>" target="_blank" class="bip">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/bip.png" alt="Biuletyn Informacji Publicznej" loading="lazy">
-                        </a>
-                        <a href="<?php the_field("header_fb", "option"); ?>" target="_blank" class="fb">
-                            <span class="sr-only">Nasze konto na Facebooku</span>
-                            <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/icon_3.svg", $i); ?>
-                            <?php echo file_get_contents($i[0]); ?>
-                        </a>
-                        <button id="contrast">
-                            <img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/eye-solid.svg" alt="" loading="lazy">
-                            <span class="sr-only">Przejdź do wersji kontrastowej</span>
-                        </button>
+                        <nav aria-label="Górne menu">
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'nav_1',
+                                'container' => false,
+                                'menu_class' => 'menu'
+                            )); ?>
+                        </nav>
+                        <div class="wcag_buttons">
+                            <ul style="display:flex;">
+                                <li>
+                                    <a href="<?php the_field("header_translator", "option") ?>" target="_blank" class="bip">
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/dlonie_biale_tlo.jpg" alt="Tłumacz Online - PZG Oddział Mazowiecki" loading="lazy" width="49px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php the_field("header_bip", "option"); ?>" target="_blank" class="bip">
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/bip.png" alt="Biuletyn Informacji Publicznej" loading="lazy">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php the_field("header_fb", "option"); ?>" target="_blank" class="fb">
+                                        <span class="sr-only">Nasze konto na Facebooku</span>
+                                        <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/icon_3.svg", $i); ?>
+                                        <?php echo file_get_contents($i[0]); ?>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <button id="big-letter" class="letter">
+                                <img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/letter-a.png" alt="" loading="lazy">
+                                <span class="sr-only" id="smallerText">Pomniejsz rozmiar czcionki</span>
+                            </button>
+                            <button id="small-letter" class="letter">
+                                <img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/letter-a.png" alt="" loading="lazy">
+                                <span class="sr-only" id="biggerText">Powiększ rozmiar czcionki</span>
+                            </button>
+                            <button id="contrast">
+                                <img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/eye-solid.svg" alt="" loading="lazy">
+                                <span class="sr-only" id="contrastText">Przejdź do wersji kontrastowej</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,9 +107,10 @@
                         <?php endif ?>
                     </div>
                     <div class="block_2">
-                        <a href="#" class="search_btn">
+                        <a href="#" class="search_btn" id="search_btn">
                             <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/icon_4.svg", $i); ?>
                             <?php echo file_get_contents($i[0]); ?>
+                            <span class="sr-only">Wyszukaj frazę. Po naciśnięciu klawisza Enter otworzy się wyszukiwarka.</span>
                         </a>
                         <div class="container">
                             <form action="<?php echo get_home_url('/'); ?>" method="get" role="search" class="search">
@@ -88,7 +120,7 @@
                                     <?php echo file_get_contents($i[0]); ?>
                                 </button>
                             </form>
-                            <nav class="nav" aria-label="Główna nawigacja">
+                            <nav class="nav" id="main-menu" aria-label="Główna nawigacja">
                                 <?php wp_nav_menu(array(
                                     'theme_location' => 'nav_2',
                                     'container' => false,

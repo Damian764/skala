@@ -3,22 +3,28 @@
 
 <div class="banner">
     <div class="wrapper">
-        <h2>RODO</h2>
-        <div class="breadcrumbs">
+        <h1>RODO</h1>
+        <nav class="breadcrumbs" aria-label="Ścieżka do strony">
             <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/arrow_next.svg", $separator); ?>
             <?php preg_match('/(wp-content\/)[\d\w\!-_]+/', get_stylesheet_directory_uri() . "/dist/images/icon_8.svg", $icon); ?>
             <div class="icon"><?php echo file_get_contents($icon[0]); ?></div>
-            <p>
-                <a href="<?php echo get_home_url(); ?>">Strona główna</a>
-                <span class="separator"><?php echo file_get_contents($separator[0]); ?></span>
+            <ol>
+                <li>
+                    <a href="<?php echo get_home_url(); ?>">Strona główna</a>
+                    <span aria-hidden="true" class="separator"><?php echo file_get_contents($separator[0]); ?></span>
+                </li>
                 <?php global $post;
                 if ($post->post_parent) { ?>
-                    <a href="<?php echo get_the_permalink(wp_get_post_parent_id(get_the_ID())); ?>"><?php echo get_the_title(wp_get_post_parent_id(get_the_ID())); ?></a>
-                    <span class="separator"><?php echo file_get_contents($separator[0]); ?></span>
+                    <li>
+                        <a href="<?php echo get_the_permalink(wp_get_post_parent_id(get_the_ID())); ?>"><?php echo get_the_title(wp_get_post_parent_id(get_the_ID())); ?></a>
+                        <span aria-hidden="true" class="separator"><?php echo file_get_contents($separator[0]); ?></span>
+                    </li>
                 <?php } ?>
-                <span><?php the_title(); ?></span>
-            </p>
-        </div>
+                    <li>
+                        <span aria-current="page"><?php the_title(); ?></span>
+                    </li>
+            </ol>
+        </nav>
     </div>
 </div>
 
@@ -26,14 +32,15 @@
     <div class="wrapper">
         <div class="inner">
             <div class="cols">
-                <div class="sidebar">
-                    <p class="title">Na skróty:</p>
+                <aside class="sidebar">
+                    <h2 class="title">Na skróty:</h2>
                     <?php wp_nav_menu(array(
                         'theme_location' => 'rodo',
-                        'container' => false,
+                        'container' => 'nav',
+                        'container_aria_label' => 'Menu boczne',
                         'menu_class' => 'menu'
                     )); ?>
-                </div>
+                </aside>
                 <div class="contents">
                     <div class="editor">
                         <?php while (have_posts()) {
